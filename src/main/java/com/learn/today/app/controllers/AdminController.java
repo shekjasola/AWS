@@ -14,16 +14,16 @@ import com.learn.today.app.services.CourseService;
 public class AdminController {
 	
 	@Autowired
-	private CourseService courseService;
+	private CourseService course;
 	
 	@GetMapping("/admin/courses")
 	public List<Course> getAllCourses() {
-		return courseService.getAllCourses();
+		return course.getAllCourses();
 	}
 	
 	@GetMapping("/admin/courses/{id}")
 	public Course getCourseById(@PathVariable int id) {
-		Course courseById = courseService.getCourseById(id);
+		Course courseById = course.getCourseById(id);
 		return courseById;
 	}
 
